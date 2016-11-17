@@ -21,7 +21,7 @@
  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  SOFTWARE.
  */
-export default class extends Promise {
+export default class {
     /**
      *
      * @param {Function} executor
@@ -29,7 +29,6 @@ export default class extends Promise {
      */
     constructor(executor, proxyNames=["then", "catch"]) {
         if (typeof executor !== "function") throw new TypeError("executor must be a function");
-        super(function () {});
         let self = this,
             queue = [];
 
